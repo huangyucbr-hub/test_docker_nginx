@@ -1,1 +1,4 @@
 /home/huang/scripts/test_docker_nginx/README.md
+
+  git config --global user.email "huangyucbr@live.com"
+  git config --global user.name "huangyucbr"
