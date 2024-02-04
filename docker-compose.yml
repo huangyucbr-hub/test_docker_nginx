@@ -1,0 +1,17 @@
+version: '3'
+services:
+  helloworld:
+    container_name: helloworld
+    image: crccheck/hello-world
+    ports:
+      - "8888:8000" # Directly accessible for testing or direct access
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_reverse_proxy
+    ports:
+      - "8080:80" # Nginx listens on port 8080 on the host
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d # Mount your custom Nginx configuration directory
+    depends_on:
+      - helloworld
